@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 //导入stack导航组件
 import { StackNavigator } from 'react-navigation';
+import PizzaTranslator from './src/containers/PizzaTranslator.js'
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -29,6 +30,10 @@ class HomeScreen extends React.Component {
         <Button
           onPress={() => navigate('Chat', { user: 'zuoyan' })}
           title="Chat with Lucy"
+        />
+        <Button
+          onPress={() => navigate('PizzaTranslator')}
+          title="PizzaTranslator"
         />
       </View>
     );
@@ -65,6 +70,11 @@ class ChatScreen extends React.Component {
 const SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
   Chat: { screen: ChatScreen },
+  PizzaTranslator: {screen: PizzaTranslator},
+},{
+  navigationOptions:{
+    headerBackTitle: null,
+  }
 });
 
 AppRegistry.registerComponent('SimpleApp', () => SimpleApp);
