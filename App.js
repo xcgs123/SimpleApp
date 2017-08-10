@@ -17,6 +17,7 @@ import {
 //导入stack导航组件
 import { StackNavigator } from 'react-navigation';
 import PizzaTranslator from './src/containers/PizzaTranslator.js'
+import Link from './src/containers/Demo-linking.js'
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -33,7 +34,11 @@ class HomeScreen extends React.Component {
         />
         <Button
           onPress={() => navigate('PizzaTranslator')}
-          title="PizzaTranslator"
+          title="PizzaTranslator" 
+        />
+        <Button
+          onPress={() => navigate('Link')}
+          title="Linking"
         />
       </View>
     );
@@ -71,6 +76,7 @@ const SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
   Chat: { screen: ChatScreen },
   PizzaTranslator: {screen: PizzaTranslator},
+  Link: {screen: Link}
 },{
   navigationOptions:{
     headerBackTitle: null,
